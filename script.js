@@ -1,17 +1,30 @@
 //Harvard Art Museum API Key
 var APIKey= "9110745d-175a-40d6-badc-2106d0abd90b";
 
+var Cultures= {
+    Arab: "37526823",
+    Indian: "37527678",
+    Japanese: "37527795", 
+    Russian: "37528461", 
+    Kurdish: "37527894", 
+    Croatian:"37527219",
+    Peruvian: "37528317", 
+    Cambodian:"37527075", 
+    Ottoman:"37528272", 
+    Mexican: "37528029", 
+    Chinese: "37527174", 
+    Egyptian: "37527318"
+};
+
+console.log(Cultures);
 
 function searchArt(event) {
     //prevent default refresh
     event.preventDefault();
     
-    var queryURL = "https://api.harvardartmuseums.org/object?q=totalpageviews:0&size=10&apikey=" + APIKey;
+    //this query url returns 10 images from a specific culture (Egyptian is used as a test value); we need to replace the culture id with a variable from the user specified input
+    var queryURL = "https://api.harvardartmuseums.org/object?q=totalpageviews:0&size=10&culture=37527318&apikey=" + APIKey;
 
-
-    // If you comment out line 11 and replace it with the line below, the console log will show data on all 255 cultures available to choose from. We should pick maybe 10, each of which have a decent amount of art (which I think is shown in "objects")
-
-   /*  var queryURL= "https://api.harvardartmuseums.org/culture?size=255&apikey=" + APIKey; */
 
     //fetch request
     fetch(queryURL)
@@ -21,6 +34,16 @@ function searchArt(event) {
         .then(function(data) {
             console.log(data);
         });
+
+    /*This was used to find the list of all cultures...
+    var queryURL2= "https://api.harvardartmuseums.org/culture?size=255&apikey=" + APIKey;    
+       fetch(queryURL2)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+    }); */
 };
 
 //need a function to display search history and clear current search
@@ -37,3 +60,9 @@ search.addEventListener("click", searchArt);
 6. Write logic to determine which API call to use based on the users selection
 
 */
+
+
+//test.addEventListener("click", function(){
+// store the number that goes with the culture
+//var currentCulture = ....
+//})
