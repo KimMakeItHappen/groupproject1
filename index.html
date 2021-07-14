@@ -2,36 +2,99 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Weather Dashboard</title>
+<head>
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link rel="stylesheet" href="C:\Users\Joshua\Desktop\groupproject1\style.css">
+    
+  <title>Weather Dashboard</title>
   </head>
 
   <body>
-    <form>
-        <input type="text" name="city" id="city">
-        <button id="search">Search</button>
-    </form>
-    <p id="test"></p>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+   <!-- Start Top Bar -->
+   <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">Blog</li>
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="card rating">
+    <div class="card-section">
+      <div class="rating-block">
+        <div class="rating-block-rating" data-rating>
+          <div class="star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+            </svg>
+          </div>
+          <div class="star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+            </svg>
+          </div>
+          <div class="star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+            </svg>
+          </div>
+          <div class="star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+            </svg>
+          </div>
+          <div class="star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+
+      <form action="/action_page.php">
+        <label for="Artwork">Choose an artist:</label>
+        <select name="cars" id="cars">
+          <option value="Artist 1">Van Gogh</option>
+          <option value="Artist 2">Pollack</option>
+          <option value="Artist 3">Basquiat</option>
+          <option value="Artist 4">Dali</option>
+          <option value="Artist 5">Various</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+
+      <button class="button button-like">
+        <i class="fa fa-heart"></i>
+        <span>Like</span>
+      </button>
+      
+
+     
+
+  <!-- We can now combine rows and columns when there's only one column in that row -->
+  <div class="row medium-8 large-7 columns">
+    <div class="blog-post">
+      <h2> Starry Night <small>June,1889</small></h2>
+      <img class="thumbnail" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-print-by-vincent-van-gogh-vincent-van-gogh.jpg">
+      <p>The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village.</p>
+      <div class="callout">
+        <ul class="menu simple">
+          <li><a href="#">Author: Mike Mikers</a></li>
+          <li><a href="#">Comments: 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
 </html>
