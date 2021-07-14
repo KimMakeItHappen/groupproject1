@@ -1,17 +1,27 @@
 //Harvard Art Museum API Key
-var APIKey= "9110745d-175a-40d6-badc-2106d0abd90b";
+var APIKey = "9110745d-175a-40d6-badc-2106d0abd90b";
+var Cultures = {
+    Arab: "37526823",
+    Indian: "37527678",
+    Japanese: "37527795", 
+    Russian: "37528461", 
+    Kurdish: "37527894", 
+    Croatian:"37527219",
+    Peruvian: "37528317", 
+    Cambodian:"37527075", 
+    Ottoman:"37528272", 
+    Mexican: "37528029", 
+    Chinese: "37527174", 
+    Egyptian: "37527318"
+};
 
+var idNumber = "";
 
 function searchArt(event) {
     //prevent default refresh
     event.preventDefault();
     
-    var queryURL = "https://api.harvardartmuseums.org/object?q=totalpageviews:0&size=10&apikey=" + APIKey;
-
-
-    // If you comment out line 11 and replace it with the line below, the console log will show data on all 255 cultures available to choose from. We should pick maybe 10, each of which have a decent amount of art (which I think is shown in "objects")
-
-   /*  var queryURL= "https://api.harvardartmuseums.org/culture?size=255&apikey=" + APIKey; */
+    var queryURL = "https://api.harvardartmuseums.org/object?q=totalpageviews:0&size=10&culture= "+ idNumber +" &apikey=" + APIKey;
 
     //fetch request
     fetch(queryURL)
@@ -37,3 +47,11 @@ search.addEventListener("click", searchArt);
 6. Write logic to determine which API call to use based on the users selection
 
 */
+var arab = document.getElementById("arab");
+
+arab.addEventListener("click", function(){
+    console.log("this is working");
+    idNumber = Cultures.Arab;
+    console.log(idNumber)
+});
+
