@@ -2,15 +2,15 @@
 var APIKey = "9110745d-175a-40d6-badc-2106d0abd90b";
 var cultures = {
     Arab: "37526823",
-    Indian: "37527678",
+    Indian: "37527678", /* no primaryimage url*/
     Japanese: "37527795", 
-    Russian: "37528461", 
-    Kurdish: "37527894", 
-    Croatian:"37527219",
-    Peruvian: "37528317", 
-    Cambodian:"37527075", 
-    Ottoman:"37528272", 
-    Mexican: "37528029", 
+    Russian: "37528461", /* no primaryimage url*/
+    Kurdish: "37527894", /* no primaryimage url*/
+    Croatian:"37527219",/* no primaryimage url*/
+    Peruvian: "37528317",/* no primaryimage url*/
+    Cambodian:"37527075", /* no primaryimage url*/
+    Ottoman:"37528272", /* some primaryimage url*/
+    Mexican: "37528029", /* no primaryimage url*/
     Chinese: "37527174", 
     Egyptian: "37527318"
 };
@@ -32,11 +32,13 @@ function searchArt(event) {
         })
         .then(function(data) {
             console.log(data);
-            for(var i=0;i<10;i++){
+            for(var i=0;i<9;i++){
+                //not all primary image urls are defined... we need logic to skip over the ones that aren't
+                console.log(data.records[i].primaryimageurl)
                 harvardArtMuseumImages.push(data.records[i].primaryimageurl);
+                document.getElementById("slide-"+(i+1)).src=harvardArtMuseumImages[i];
             }
             console.log(harvardArtMuseumImages);
-            /* document.getElementsByClassName(".orbit-image").setAttribute("src", harvardArtMuseumImages[0]); */
         });
 };
 //when search button is clicked...
@@ -46,4 +48,5 @@ genres.addEventListener("change", function(event){
     console.log(event.target.value);
     idNumber = event.target.value;
     console.log(idNumber)
+    harvardArtMuseumImages=[];
 });
