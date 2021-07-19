@@ -1,190 +1,206 @@
-<!-- This is Rachel, testing to see if I can do a pull request -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
-  <link rel="stylesheet" src="./style.css">
-
-<!--   <link rel="stylesheet" href="C:\Users\Joshua\Desktop\groupproject1\style.css"> -->
-    
-  <title>Art Appreciation</title>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" src="./style.css">
+    <!--   <link rel="stylesheet" href="C:\Users\Joshua\Desktop\groupproject1\style.css"> -->
+    <title>Art Appreciation</title>
   </head>
-
   <body>
-   <!-- Start Top Bar -->
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="menu">
-        <li class="menu-text">Blog</li>
-        <li><a href="#">One</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="card rating">
-    <div class="card-section">
-      <div class="rating-block">
-        <div class="rating-block-rating" data-rating>
-          <div class="star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
-              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
-            </svg>
-          </div>
-          <div class="star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
-              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
-            </svg>
-          </div>
-          <div class="star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
-              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
-            </svg>
-          </div>
-          <div class="star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
-              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
-            </svg>
-          </div>
-          <div class="star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
-              <polygon fill="none" points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18" transform="translate(-252)"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <form>
-        <label for="Artwork">Choose a culture or genre of art:</label>
-        <select name="cars" id="genres">
-          <option disabled selected>Select an item below...</option>
-          <option value="37526823">Arab</option>
-          <option value="37527678">Indian</option>
-          <option value="37527795">Japanese</option>
-          <option value="37528461">Russian</option>
-          <option value="37527894">Kurdish</option>
-          <option value="37527219">Croatian</option>
-          <option value="37528317">Peruvian</option>
-          <option value="37527075">Cambodian</option>
-          <option value="37528272">Ottoman</option>
-          <option value="37528029">Mexican</option>
-          <option value="37527174">Chinese</option>
-          <option value="37527318">Egyptian</option>
-        </select>
-        <br><br>
-      </form>
-
-      <button id="submit" class="button button-like">
-        <i class="fa fa-heart"></i>
-        <span>View Art</span>
-      </button>
-      <button class="button button-like">
-        <i class="fa fa-heart"></i>
-        <span>Like</span>
-      </button>
-  
-  
-      <div id="slides" class="orbit" role="region" aria-label="Art Gallery" data-orbit>
-        <div class="orbit-wrapper">
-          <div class="orbit-controls">
-            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-          </div>
-          <ul class="orbit-container">
-            <li class="is-active orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-1" class="orbit-image" src="https:/via.placeholder.com/1200x600/999?text=Slide-1" alt="Space">
-                <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-2" class="orbit-image" src="https:/via.placeholder.com/1200x600/888?text=Slide-2" alt="Space">
-                <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-3" class="orbit-image" src="https:/via.placeholder.com/1200x600/777?text=Slide-3" alt="Space">
-                <figcaption class="orbit-caption">Encapsulating</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-3" class="orbit-image" src="https:/via.placeholder.com/1200x600/666&text=Slide-4" alt="Space">
-                <figcaption class="orbit-caption">Outta This World</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-4" class="orbit-image" src="https:/via.placeholder.com/1200x600/888?text=Slide-2" alt="Space">
-                <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-5" class="orbit-image" src="https:/via.placeholder.com/1200x600/777?text=Slide-3" alt="Space">
-                <figcaption class="orbit-caption">Encapsulating</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-6" class="orbit-image" src="https:/via.placeholder.com/1200x600/666&text=Slide-4" alt="Space">
-                <figcaption class="orbit-caption">Outta This World</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-7" class="orbit-image" src="https:/via.placeholder.com/1200x600/777?text=Slide-3" alt="Space">
-                <figcaption class="orbit-caption">Encapsulating</figcaption>
-              </figure>
-            </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-8" class="orbit-image" src="https:/via.placeholder.com/1200x600/666&text=Slide-4" alt="Space">
-                <figcaption class="orbit-caption">Outta This World</figcaption>
-              </figure>
-            <li class="orbit-slide">
-              <figure class="orbit-figure">
-                <img id="slide-9" class="orbit-image" src="https:/via.placeholder.com/1200x600/666&text=Slide-4" alt="Space">
-                <figcaption class="orbit-caption">Outta This World</figcaption>
-              </figure>
-          </li>
-          </ul>
-        </div>
-        <nav class="orbit-bullets">
-          <button class="is-active" data-slide="0">
-            <span class="show-for-sr">First slide details.</span>
-            <span class="show-for-sr" data-slide-active-label>Current Slide</span>
-          </button>
-          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-        </nav>
-      </div>
-
-  <!-- We can now combine rows and columns when there's only one column in that row -->
-  <div class="row medium-8 large-7 columns">
-    <div class="blog-post">
-      <h2> Starry Night <small>June,1889</small></h2>
-      <img id="art-image-1" class="thumbnail" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-print-by-vincent-van-gogh-vincent-van-gogh.jpg">
-      <p>The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh. Painted in June 1889, it depicts the view from the east-facing window of his asylum room at Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village.</p>
-      <div class="callout">
-        <ul class="menu simple">
-          <li><a href="#">Author: Mike Mikers</a></li>
-          <li><a href="#">Comments: 3</a></li>
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Blog</li>
+          <li><a href="#">One</a></li>
+          <li><a href="#">Two</a></li>
+          <li><a href="#">Three</a></li>
         </ul>
       </div>
+    </div>
+    <div class="card rating">
+      <div class="card-section">
+        <div class="rating-block">
+          <div class="rating-block-rating" data-rating>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none"
+                  points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18"
+                  transform="translate(-252)" />
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none"
+                  points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18"
+                  transform="translate(-252)" />
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none"
+                  points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18"
+                  transform="translate(-252)" />
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none"
+                  points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18"
+                  transform="translate(-252)" />
+              </svg>
+            </div>
+            <div class="star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="37" viewBox="0 0 40 37">
+                <polygon fill="none"
+                  points="272 30 260.244 36.18 262.489 23.09 252.979 13.82 266.122 11.91 272 0 277.878 11.91 291.021 13.82 281.511 23.09 283.756 36.18"
+                  transform="translate(-252)" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <form>
+          <label for="Artwork">Choose a culture or genre of art:</label>
+          <select name="cars" id="genres">
+            <option disabled selected>Select an item below...</option>
+            <option value="37526823">Arab</option>
+            <option value="37528758">Thai</option>
+            <option value="37527795">Japanese</option>
+            <option value="37527867">Korean</option>
+            <option value="37527570">Hellenistic</option>
+            <option value="37527066">Byzantine</option>
+            <option value="37527426">French</option>
+            <option value="37527174">Chinese</option>
+            <option value="37527318">Egyptian</option>
+            <option value="female_artists">Woman Artists</option>
+            <option value="african_american_artists">African American Artists</option>
+            <option value="created_before_age=25">Younger Artists</option>
+            <option value="created_after_age=45">Older Artists</option>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
-  <!-- <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-</body>
+          </select>
+          <br><br>
+        </form>
+        <button id="submit" class="button button-like">
+          <i class="fa fa-heart"></i>
+          <span>View Art</span>
+        </button>
+        <button class="button button-like">
+          <i class="fa fa-heart"></i>
+          <span>Like</span>
+        </button>
+        <div id="slides" class="orbit" role="region" aria-label="Art Gallery" data-orbit>
+          <div class="orbit-wrapper">
+            <div class="orbit-controls">
+              <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+              <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+            </div>
+            <ul id="orbit-container" class="orbit-container">
+              <li class="is-active orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+              <li class="orbit-slide">
+                <figure class="orbit-figure">
+                  <img class="orbit-image" src="https://via.placeholder.com/1200x600/?text=Please+search+for+an+image"
+                    alt="Please search for an image">
+                  <figcaption class="orbit-caption">Please search for an image</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <nav class="orbit-bullets">
+            <button class="is-active" data-slide="0">
+              <span class="show-for-sr">First slide details.</span>
+              <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+            </button>
+            <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+            <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+            <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+          </nav>
+        </div>
+        <!-- We can now combine rows and columns when there's only one column in that row -->
+        <div class="row medium-8 large-7 columns">
+          <div class="blog-post">
+            <h2> Starry Night <small>June,1889</small></h2>
+            <img id="art-image-1" class="thumbnail"
+              src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-print-by-vincent-van-gogh-vincent-van-gogh.jpg">
+            <p>The Starry Night is an oil on canvas painting by Dutch Post-Impressionist painter Vincent van Gogh.
+              Painted in June 1889, it depicts the view from the east-facing window of his asylum room at
+              Saint-Rémy-de-Provence, just before sunrise, with the addition of an imaginary village.</p>
+            <div class="callout">
+              <ul class="menu simple">
+                <li><a href="#">Author: Mike Mikers</a></li>
+                <li><a href="#">Comments: 3</a></li>
+              </ul>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!-- <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script> -->
+            <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+              integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+            <script>
+              $(document).foundation();
+            </script>
+  </body>
 </html>
