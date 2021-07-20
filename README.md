@@ -17,6 +17,6 @@ THEN the pieces I've liked are saved in local storage and persist on the page
 
 
 
-https://user-images.githubusercontent.com/81760763/126405396-48974f69-6d83-490e-b5d5-314b1cc885af.mp4
+
 
 ![art-appreciation](https://user-images.githubusercontent.com/81760763/126405428-eccf9f93-7ed5-4b21-95c6-452b99cbd8e8.png)
