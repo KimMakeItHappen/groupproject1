@@ -7,6 +7,11 @@ So that I can develop a portfolio of my favorites
 
 
 WHEN I choose a culture from the dropdown
+
+https://user-images.githubusercontent.com/81760763/126405396-48974f69-6d83-490e-b5d5-314b1cc885af.mp4
+
+![art-appreciation](https://user-images.githubusercontent.com/81760763/126405428-eccf9f93-7ed5-4b21-95c6-452b99cbd8e8.png)
+
 THEN I am presented with an example piece of an artist from  the culture chosen.
 WHEN I View the artwork
 THEN I will see a short description of the art underneath the piece
