@@ -101,21 +101,17 @@ function searchArt(event) {
 //when search button is clicked...
 submit.addEventListener("click", searchArt);
 genres.addEventListener("change", function (event) {
-  console.log(event.target.value);
+  for(var i=0;i<10;i++){
+    var orbitSlide = document.querySelector("[data-slide='" + i + "']");
+    var orbitImage = orbitSlide.querySelector("img");
+    var orbitCaption = orbitSlide.querySelector("figcaption");
+    var fallbackUrl =
+      "https://via.placeholder.com/1200x600/?text=No+image+available";
+    var fallbackTitle = "No image available";
+    orbitImage.setAttribute("src", fallbackUrl);
+    orbitImage.setAttribute("alt", fallbackTitle);
+    orbitCaption.textContent = fallbackTitle;
+  }
+  
   idNumber = event.target.value;
-  console.log(idNumber);
 });
-
-
-//Cleveveland Museum of Art
-/* var queryURL2 = "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10&female_artists";
-
-fetch(queryURL2)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    console.log(data);
-});
-
- */
