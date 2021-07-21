@@ -14,6 +14,7 @@ var idNumber = "";
 var genres = document.getElementById("genres");
 var like = document.getElementById("like");
 var likedArt = localStorage.getItem("liked art");
+var clear = document.getElementById("clear");
 
 if(likedArt){
   likedArt= JSON.parse(likedArt);
@@ -22,6 +23,22 @@ if(likedArt){
 }
 
 //append the array elements onto the ul upon page load
+if(likedArt.length!==0){
+  for(i=0;i<likedArt.length;i++){
+     //create HTML elements
+     var li = document.createElement("li");
+     var a = document.createElement("a");
+     //add classes to elements for styling purposes
+     li.classList.add("liked-art-list");
+     a.classList.add("liked-art-URL");
+       //add text, set href
+       a.textContent=likedArt[i];
+       a.setAttribute("href",likedArt[i]);
+       //append elements to ul
+       document.querySelector("#liked-art").appendChild(li);
+       li.appendChild(a);
+  }
+}
 
 function searchArt(event) {
   //prevent default refresh
@@ -150,7 +167,14 @@ function isActive(){
     }
   }
 }
-
+//when like button is clicked...
 like.addEventListener("click", isActive);
+//when clear button is clicked...
+clear.addEventListener("click", function(event){
+  event.preventDefault();
+  localStorage.clear();
+  likedArt=[ ];
+  $("#liked-art").empty();
+});
 
 //TODO display none on the slideshow if idNumber="".
