@@ -2,7 +2,6 @@
 //Harvard Art Museum API Key
 var APIKey = "9110745d-175a-40d6-badc-2106d0abd90b";
 var cultures = {
-  Arab: "37526823", //9 out of 10
   Japanese: "37527795", //9 out of 10
   Korean: "37527867", 
   Byzantine: "37527066 ", //8 out of 10
@@ -15,6 +14,7 @@ var genres = document.getElementById("genres");
 var like = document.getElementById("like");
 var likedArt = localStorage.getItem("liked art");
 var clear = document.getElementById("clear");
+var slides = document.getElementById("slides");
 
 if(likedArt){
   likedArt= JSON.parse(likedArt);
@@ -28,7 +28,7 @@ if(likedArt.length!==0){
      //create HTML elements
      var li = document.createElement("li");
      var a = document.createElement("a");
-     //add classes to elements for styling purposes
+     //add classes to elements so they can be styled
      li.classList.add("liked-art-list");
      a.classList.add("liked-art-URL");
        //add text, set href
@@ -43,19 +43,20 @@ if(likedArt.length!==0){
 function searchArt(event) {
   //prevent default refresh
   event.preventDefault();
+  //choose which API call is made
   if (parseInt(idNumber, 10) > 1000) {
+    //Harvard Art Musuem API call
     var queryURL =
       "https://api.harvardartmuseums.org/object?q=totalpageviews:0&size=10&culture= " +
       idNumber +
       " &apikey=" +
       APIKey;
-    //fetch request
     fetch(queryURL)
       .then(function (response) {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        //display images on slideshow
         for (var i = 0; i < data.records.length; i++) {
           var orbitSlide = document.querySelector("[data-slide='" + i + "']");
           var orbitImage = orbitSlide.querySelector("img");
@@ -65,24 +66,30 @@ function searchArt(event) {
             "https://via.placeholder.com/1200x600/?text=No+image+available";
           var imageTitle = data.records[i].title;
           var fallbackTitle = "No image available";
+          //check conditions on orbit slides and image data
           if (!orbitSlide) {
             console.log("No Orbit Slide found at this index!");
           }
           if (primaryImageUrl) {
+            //change the image source to the art museum image url
             orbitImage.setAttribute("src", primaryImageUrl);
           } else {
+            //change the image source to a fallback if no primary image url is unavailable
             orbitImage.setAttribute("src", fallbackUrl);
           }
           if (imageTitle) {
+            //change the alt text and caption on the image to the art museum image title 
             orbitImage.setAttribute("alt", imageTitle);
             orbitCaption.textContent = imageTitle;
           } else {
+            //change the alt text and caption on the image to a fallback if no title is available 
             orbitImage.setAttribute("alt", fallbackTitle);
             orbitCaption.textContent = fallbackTitle;
           }
         }
       });
   } else {
+    //Cleveland Art Museum API call
     var queryURL2 =
       "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10&" +
       idNumber;
@@ -92,8 +99,7 @@ function searchArt(event) {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
-        console.log(data.data.length);
+        //display images on the slideshow
         for (var i = 0; i < data.data.length; i++) {
           var orbitSlide = document.querySelector("[data-slide='" + i + "']");
           var orbitImage = orbitSlide.querySelector("img");
@@ -104,17 +110,22 @@ function searchArt(event) {
             "https://via.placeholder.com/1200x600/?text=No+image+available";
           var imageTitle = data.data[i].title;
           var fallbackTitle = "No image available";
+          //check conditions on orbit slides and image data
           if (!orbitSlide) {
             console.log("No Orbit Slide found at this index!");
           }
+          //change the image source to the art musuem image url
           if (primaryImageUrl) {
             orbitImage.setAttribute("src", primaryImageUrl);
+          //change the image source to a fallback if no primary image url is unavailable
           } else {
             orbitImage.setAttribute("src", fallbackUrl);
           }
+          //change the alt text and caption on the image to the art museum image title
           if (imageTitle) {
             orbitImage.setAttribute("alt", imageTitle);
             orbitCaption.textContent = imageTitle;
+          //change the alt text and caption on the image to a fallback if no title is available
           } else {
             orbitImage.setAttribute("alt", fallbackTitle);
             orbitCaption.textContent = fallbackTitle;
@@ -123,21 +134,21 @@ function searchArt(event) {
       });
   }
 }
-//when search button is clicked...
+//when "view art" button is clicked...
 submit.addEventListener("click", searchArt);
+//When a menu item is selected...
 genres.addEventListener("change", function (event) {
   for(var i=0;i<10;i++){
     var orbitSlide = document.querySelector("[data-slide='" + i + "']");
     var orbitImage = orbitSlide.querySelector("img");
     var orbitCaption = orbitSlide.querySelector("figcaption");
     var fallbackUrl =
-      "https://via.placeholder.com/1200x600/?text=No+image+available";
-    var fallbackTitle = "No image available";
+      "https://via.placeholder.com/1200x600/?text=Click+the+'View+Art'+button";
+    var fallbackTitle = "Click the 'View Art' Button";
     orbitImage.setAttribute("src", fallbackUrl);
     orbitImage.setAttribute("alt", fallbackTitle);
     orbitCaption.textContent = fallbackTitle;
   }
-  
   idNumber = event.target.value;
 });
 
@@ -146,24 +157,42 @@ function isActive(){
   for(var i=0; i<children.length;i++){
     var child = children[i];
     if (child.classList.contains("is-active")===true){
-      console.log("one of these is active")
-      //store child.childNodes... etc as a variable
-      console.log(child.childNodes[1].childNodes[1].src);
-      likedArt.push(child.childNodes[1].childNodes[1].src);
-      localStorage.setItem("liked art", JSON.stringify(likedArt));
-      console.log(likedArt);
-      //create HTML elements
-      var li = document.createElement("li");
-      var a = document.createElement("a");
-      //add classes to elements for styling purposes
-      li.classList.add("liked-art-list");
-      a.classList.add("liked-art-URL");
-      //add text, set href
-      a.textContent=child.childNodes[1].childNodes[1].src;
-      a.setAttribute("href",child.childNodes[1].childNodes[1].src);
-      //append li's to ul
-      document.querySelector("#liked-art").appendChild(li);
-      li.appendChild(a);
+      //check to see if a placeholder image has been "liked"
+      if(idNumber!==""){
+        console.log("one of these is active")
+        //store child.childNodes... etc as a variable
+        likedArt.push(child.childNodes[1].childNodes[1].src);
+        localStorage.setItem("liked art", JSON.stringify(likedArt));
+        //create HTML element
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        //add classes to elements for styling purposes
+        li.classList.add("liked-art-list");
+        a.classList.add("liked-art-URL");
+        //add text, set href
+        a.textContent=child.childNodes[1].childNodes[1].src;
+        a.setAttribute("href",child.childNodes[1].childNodes[1].src);
+        //append li's to ul
+        document.querySelector("#liked-art").appendChild(li);
+        li.appendChild(a);
+      }
+      else{
+         //store child.childNodes... etc as a variable
+         likedArt.push("https://unsplash.com/s/photos/placeholder");
+         localStorage.setItem("liked art", JSON.stringify(likedArt));
+         //create HTML element
+         var li = document.createElement("li");
+         var a = document.createElement("a");
+         //add classes to elements for styling purposes
+         li.classList.add("liked-art-list");
+         a.classList.add("liked-art-URL");
+         //add text, set href
+         a.textContent="https://unsplash.com/s/photos/placeholder";
+         a.setAttribute("href","https://unsplash.com/s/photos/placeholder");
+         //append li's to ul
+         document.querySelector("#liked-art").appendChild(li);
+         li.appendChild(a);
+      }
     }
   }
 }
@@ -176,5 +205,3 @@ clear.addEventListener("click", function(event){
   likedArt=[ ];
   $("#liked-art").empty();
 });
-
-//TODO display none on the slideshow if idNumber="".
