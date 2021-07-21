@@ -54,3 +54,20 @@
   opacity: 1;
   transition: 0s
 }
+
+#liked-art{
+  list-style-type: none;
+  border: 5px solid #247bA0;
+  border-radius: 50px;
+  background-color: #BA5A31;
+
+}
+
+
+
+.liked-art-URL{
+  
+display: flex;
+justify-content: center;
+color: chartreuse;
+}
