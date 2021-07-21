@@ -2,19 +2,27 @@
 //Harvard Art Museum API Key
 var APIKey = "9110745d-175a-40d6-badc-2106d0abd90b";
 var cultures = {
-  Arab: "37526823",
-  Thai: "37528758", /*only two images*/
-  Japanese: "37527795",
-  Korean: "37527867" /* first primaryimage url missing*/,
-  Hellenistic: "37527570",
-  Byzantine: "37527066 ",
-  French: "37527426" /* no primaryimage url*/,
-  Chinese: "37527174",
+  Arab: "37526823", //9 out of 10
+  Japanese: "37527795", //9 out of 10
+  Korean: "37527867", 
+  Byzantine: "37527066 ", //8 out of 10
+  Chinese: "37527174", //7 out of 10
   Egyptian: "37527318",
 };
 var submit = document.getElementById("submit");
 var idNumber = "";
 var genres = document.getElementById("genres");
+var like = document.getElementById("like");
+var likedArt = localStorage.getItem("liked art");
+
+if(likedArt){
+  likedArt= JSON.parse(likedArt);
+} else {
+  likedArt= [];
+}
+
+//append the array elements onto the ul upon page load
+
 function searchArt(event) {
   //prevent default refresh
   event.preventDefault();
@@ -115,3 +123,34 @@ genres.addEventListener("change", function (event) {
   
   idNumber = event.target.value;
 });
+
+function isActive(){
+  var children= document.querySelector(".orbit-container").children;
+  for(var i=0; i<children.length;i++){
+    var child = children[i];
+    if (child.classList.contains("is-active")===true){
+      console.log("one of these is active")
+      //store child.childNodes... etc as a variable
+      console.log(child.childNodes[1].childNodes[1].src);
+      likedArt.push(child.childNodes[1].childNodes[1].src);
+      localStorage.setItem("liked art", JSON.stringify(likedArt));
+      console.log(likedArt);
+      //create HTML elements
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      //add classes to elements for styling purposes
+      li.classList.add("liked-art-list");
+      a.classList.add("liked-art-URL");
+      //add text, set href
+      a.textContent=child.childNodes[1].childNodes[1].src;
+      a.setAttribute("href",child.childNodes[1].childNodes[1].src);
+      //append li's to ul
+      document.querySelector("#liked-art").appendChild(li);
+      li.appendChild(a);
+    }
+  }
+}
+
+like.addEventListener("click", isActive);
+
+//TODO display none on the slideshow if idNumber="".
