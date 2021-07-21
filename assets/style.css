@@ -20,6 +20,21 @@
   text-shadow: 1px 1px 2px #0a0a0a;
 }
 
+h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style:oblique;
+  color: #247ba0;
+
+}
+
+#Artwork {
+font-size: 30px;
+font-weight: bold;
+font-style: italic;
+color:#BA5A31;
+
+}
+
 .button {
   position: relative;
   background-color: #247bA0;
@@ -61,7 +76,7 @@
   border: 5px solid #247bA0;
   border-radius: 50px;
   background-color: #BA5A31;
-
+font-size: 25px;
 }
 
 
@@ -70,5 +85,11 @@
   
 display: flex;
 justify-content: center;
-color: chartreuse;
+color: #12A4F2;
+}
+
+
+h6 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
 }
