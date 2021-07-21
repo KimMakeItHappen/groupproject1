@@ -1,3 +1,10 @@
+
+
+https://user-images.githubusercontent.com/81760763/126573944-06a9d1de-932c-48da-87b9-741f58c4c90a.mp4
+![image](https://user-images.githubusercontent.com/81760763/126573984-4f7faa89-c185-4039-b27c-0a3113d52aba.png)
+![image](https://user-images.githubusercontent.com/81760763/126574015-de7d780d-99cf-4de7-8203-ccbae748480a.png)
+![image](https://user-images.githubusercontent.com/81760763/126574063-82f3cb81-e410-4294-80ac-be58f7758998.png)
+
 User Story
 
 As an art and culture enthusiast
@@ -18,5 +25,3 @@ THEN the pieces I've liked are saved in local storage and persist on the page
 
 
 
-
-![art-appreciation](https://user-images.githubusercontent.com/81760763/126405428-eccf9f93-7ed5-4b21-95c6-452b99cbd8e8.png)
