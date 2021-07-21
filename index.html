@@ -65,16 +65,13 @@
           <select name="cars" id="genres">
             <option disabled selected>Select an item below...</option>
             <option value="37526823">Arab</option>
-            <option value="37528758">Thai</option>
             <option value="37527795">Japanese</option>
             <option value="37527867">Korean</option>
             <option value="37527570">Hellenistic</option>
             <option value="37527066">Byzantine</option>
-            <option value="37527426">French</option>
             <option value="37527174">Chinese</option>
             <option value="37527318">Egyptian</option>
             <option value="female_artists">Woman Artists</option>
-            <option value="african_american_artists">African American Artists</option>
             <option value="created_before_age=25">Younger Artists</option>
             <option value="created_after_age=45">Older Artists</option>
 
@@ -85,7 +82,7 @@
           <i class="fa fa-heart"></i>
           <span>View Art</span>
         </button>
-        <button class="button">
+        <button id="like" class="button">
           <i class="fa fa-heart"></i>
           <span>Like</span>
         </button>
@@ -184,7 +181,9 @@
             <button data-slide="9"><span class="show-for-sr">Fourth slide details.</span></button>
           </nav>
         </div>
-        
+
+        <ul id=liked-art>
+        </ul>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <!-- <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script> -->
             <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
@@ -196,3 +195,4 @@
 
   </body>
 </html>
+
