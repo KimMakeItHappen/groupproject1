@@ -89,12 +89,23 @@ function searchArt(event) {
         }
       });
   } else {
-    //Cleveland Art Museum API call
-    var queryURL2 =
-      "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10&" +
-      idNumber;
-    //fetch request
-    fetch(queryURL2)
+    //Cleveland Art Museum API call & fetch request
+    fetch("https://cors.bridged.cc/https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10&"+idNumber, {
+      "headers": {
+        "accept": "application/json, text/plain, */*",
+        "accept-language": "en-US,en;q=0.9",
+        "sec-ch-ua": "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-site"
+      },
+      "referrer": "https://app.cors.bridged.cc/",
+      "referrerPolicy": "strict-origin-when-cross-origin",
+      "method": "GET",
+      "mode": "cors",
+      "credentials": "omit"
+      })
       .then(function (response) {
         return response.json();
       })
