@@ -35,12 +35,19 @@ color:#BA5A31;
 
 }
 
+#genres {
+  font-weight:bold;
+  font-size: large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .button {
   position: relative;
-  background-color: #BA5A31;
+  background-color: #247ba0;
   border: none;
   font-size: 28px;
   color: #FFFFFF;
+  margin: 15px;
   padding: 20px;
   width: 200px;
   text-align: center;
@@ -74,9 +81,8 @@ color:#BA5A31;
 #liked-art{
   list-style-type: none;
   background-color: #BA5A31;
-  border: 5px solid ;
+  border: 5px solid #247ba0 ;
   border-radius: 50px;
-  background-color: #BA5A31;
 font-size: 25px;
 }
 
@@ -86,12 +92,11 @@ font-size: 25px;
   
 display: flex;
 justify-content: center;
-color: #BA5A31;
+color: #3E0BCB;
 }
 
 
 h6 {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #BA5A31;
   font-style:oblique;
 }
