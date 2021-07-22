@@ -17,13 +17,13 @@
 
 .hero-section .hero-section-text {
   color: #fefefe;
-  text-shadow: 1px 1px 2px #0a0a0a;
+  text-shadow: 1px 1px 2px #BA5A31;
 }
 
 h3 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-style:oblique;
-  color: #247ba0;
+  color:#BA5A31 ;
 
 }
 
@@ -37,7 +37,7 @@ color:#BA5A31;
 
 .button {
   position: relative;
-  background-color: #247bA0;
+  background-color: #BA5A31;
   border: none;
   font-size: 28px;
   color: #FFFFFF;
@@ -73,7 +73,8 @@ color:#BA5A31;
 
 #liked-art{
   list-style-type: none;
-  border: 5px solid #247bA0;
+  background-color: #BA5A31;
+  border: 5px solid ;
   border-radius: 50px;
   background-color: #BA5A31;
 font-size: 25px;
@@ -85,11 +86,12 @@ font-size: 25px;
   
 display: flex;
 justify-content: center;
-color: #12A4F2;
+color: #BA5A31;
 }
 
 
 h6 {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #BA5A31;
+  font-style:oblique;
 }
